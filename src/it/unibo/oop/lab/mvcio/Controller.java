@@ -1,9 +1,14 @@
 package it.unibo.oop.lab.mvcio;
 
+import java.io.File;
+import java.nio.file.Path;
+
 /**
  * 
  */
 public class Controller {
+    
+    private File f;
 
     /*
      * This class must implement a simple controller responsible of I/O access. It
@@ -27,5 +32,17 @@ public class Controller {
      * System.getProperty("file.separator"). The combined use of those methods leads
      * to a software that runs correctly on every platform.
      */
+    
+    public void setFile(String s) {
+        this.f = new File(s);
+    }
 
+    
+    public File getFile() {
+        return this.f;
+    }
+    
+    public Path getPath() {
+        return f.toPath();
+    }
 }
